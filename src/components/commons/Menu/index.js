@@ -2,7 +2,7 @@ import { MenuWrapper } from './styles/MenuWrapper';
 import { Button } from '../Button';
 import { Logo } from '../../../theme/Logo';
 
-export default function Menu() {
+export const Menu = () => {
   const buttonsList = [
     {
       name: 'Home',

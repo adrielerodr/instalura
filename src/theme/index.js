@@ -17,14 +17,6 @@ export const colors = {
       color: '#D7385E',
       contrastText: '#fff',
     },
-    dark: {
-      color: '#962741',
-      contrastText: '#fff',
-    },
-    light: {
-      color: '#DF5F7E',
-      contrastText: '#fff',
-    },
   },
   secondary: {
     main: {
@@ -51,4 +43,5 @@ export default {
   colors,
   borderRadius: '12px',
   transition: '200ms ease-in-out',
-}; 
+  fontFamily: '\'Rubik\', sans-serif',
+};
