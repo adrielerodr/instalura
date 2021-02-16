@@ -1,4 +1,5 @@
 import { MenuWrapper } from './styles/MenuWrapper';
+import { Button } from '../Button';
 import { Logo } from '../../../theme/Logo';
 
 export default function Menu() {
@@ -24,8 +25,8 @@ export default function Menu() {
       <MenuWrapper.Central>
         {
           buttonsList.map(link => (
-            <li>
-              <a href={link.url} >
+            <li key={link.url}>
+              <a href={link.url}>
                 {link.name}
               </a>
             </li>
@@ -33,12 +34,12 @@ export default function Menu() {
         }
       </MenuWrapper.Central>
       <MenuWrapper.RightSide>
-        <button>
+        <Button type="button" variant="secondary" ghost>
           Login
-        </button>
-        <button>
+        </Button>
+        <Button type="button" variant="primary">
           Sign up
-        </button>
+        </Button>
       </MenuWrapper.RightSide>
     </MenuWrapper>
   )
