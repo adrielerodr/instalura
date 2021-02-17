@@ -1,7 +1,7 @@
 import { MenuWrapper } from './styles/MenuWrapper';
 import { Button } from '../Button';
 import { Logo } from '../../../theme/Logo';
-import { Text } from '../../foundations/Text';
+import { Text } from '../../foundation/Text';
 
 export const Menu = () => {
   const buttonsList = [

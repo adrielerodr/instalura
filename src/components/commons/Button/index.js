@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
-import { TextStyleVariants } from '../../foundations/Text';
+import { TextStyleVariants } from '../../foundation/Text';
+import { propToStyle } from '../../../theme/utils/propToStyle';
 import { breakpointsMedia } from '../../../theme/utils/breackpointsMedia';
 
 const ButtonGhost = css`
@@ -23,6 +24,8 @@ export const Button = styled.button`
       ${TextStyleVariants.paragraph1}
     `,
   })}
+  ${propToStyle('margin')}
+  ${propToStyle('display')}
   border: 0;
   cursor: pointer;
   padding: 12px 26px;
