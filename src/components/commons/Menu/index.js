@@ -1,6 +1,7 @@
 import { MenuWrapper } from './styles/MenuWrapper';
 import { Button } from '../Button';
 import { Logo } from '../../../theme/Logo';
+import { Text } from '../../foundations/Text';
 
 export const Menu = () => {
   const buttonsList = [
@@ -26,9 +27,9 @@ export const Menu = () => {
         {
           buttonsList.map(link => (
             <li key={link.url}>
-              <a href={link.url}>
+              <Text tag="a" variant="smallestException" href={link.url}>
                 {link.name}
-              </a>
+              </Text>
             </li>
           ))
         }
