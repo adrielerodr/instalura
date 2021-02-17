@@ -1,4 +1,6 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { TextStyleVariants } from '../../../foundations/Text';
+import { breakpointsMedia } from '../../../../theme/utils/breackpointsMedia';
 
 export const MenuWrapper = styled.nav`
   font-family: 'Rubik', sans-serif;
@@ -9,7 +11,7 @@ export const MenuWrapper = styled.nav`
   margin-top: 18px;
   padding-left: 28px;
   padding-right: 28px;
-  /* ${breakpointsMedia({
+  ${breakpointsMedia({
     md: css`
       justify-content: flex-start;
       margin-top: 32px;
@@ -25,14 +27,14 @@ export const MenuWrapper = styled.nav`
     xl: css`
       max-width: 1222px;
     `,
-  })} */
+  })}
 `;
 
 MenuWrapper.LeftSide = styled.div`
   padding: 0;
   margin: 0;
   order: 1;
-  /* ${breakpointsMedia({
+  ${breakpointsMedia({
     md: css`
         width: 131px;
         height: 32px;
@@ -43,7 +45,7 @@ MenuWrapper.LeftSide = styled.div`
       order: initial;
       padding-right: 16px;
     `,
-  })} */
+  })}
 `;
 
 MenuWrapper.Central = styled.div`
@@ -60,7 +62,7 @@ padding: 0;
   border-bottom: 1px solid #88989E;
   padding: 12px;
   
-  /* ${breakpointsMedia({
+  ${breakpointsMedia({
     md: css`
       max-width: 332px;
       justify-content: space-between;
@@ -71,21 +73,21 @@ padding: 0;
       padding-top: 0;
       padding-bottom: 0;
     `,
-  })} */
+  })}
   a {
     text-align: center;
     display: block;
     text-decoration: none;
     color: #88989E;
     transition: 200ms ease-in-out;
-    /* ${breakpointsMedia({
+    ${breakpointsMedia({
     xs: css`
         ${TextStyleVariants.smallestException}
     `,
     md: css`
       ${TextStyleVariants.paragraph1}
     `,
-  })} */
+  })}
     &:hover,
     &:focus {
       font-weight: 500;
@@ -102,9 +104,9 @@ MenuWrapper.RightSide = styled.div`
   flex: 1;
   order: 2;
   justify-content: flex-end;
-  /* ${breakpointsMedia({
+  ${breakpointsMedia({
     md: css`
       order: initial;
     `,
-  })} */
+  })}
 `;
