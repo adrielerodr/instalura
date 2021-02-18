@@ -1,6 +1,6 @@
-import { typographyVariants } from './typographyVariants';
+import typographyVariants from './typographyVariants';
 
-export const colors = {
+const colors = {
   background: {
     light: {
       color: '#FFFFFF',
@@ -41,7 +41,7 @@ export const colors = {
   },
 };
 
-export const breakpoints = {
+const breakpoints = {
   xs: 0, // extra small
   sm: 480, // small
   md: 768, // medium
@@ -53,7 +53,7 @@ export default {
   colors,
   breakpoints,
   typographyVariants,
-  borderRadius: '12px',
+  borderRadius: '8px',
   transition: '200ms ease-in-out',
   fontFamily: '\'Rubik\', sans-serif',
 };

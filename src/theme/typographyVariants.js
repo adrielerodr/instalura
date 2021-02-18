@@ -36,4 +36,4 @@ const typographyVariants = {
   },
 };
 
-export { typographyVariants };
+export default typographyVariants;

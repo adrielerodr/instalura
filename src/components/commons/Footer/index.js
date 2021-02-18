@@ -24,30 +24,28 @@ const FooterWrapper = styled.footer`
   }
 `;
 
-const Footer = (props) => {
-  return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    <FooterWrapper {...props}>
-      <a href="https://www.alura.com.br/">
-        <img src="https://www.alura.com.br/assets/img/alura-logo.svg" alt="Logo Alura" />
+const Footer = (props) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <FooterWrapper {...props}>
+    <a href="https://www.alura.com.br/">
+      <img src="https://www.alura.com.br/assets/img/alura-logo.svg" alt="Logo Alura" />
+    </a>
+    <p>
+      Orgulhosamente criado pela
+      {' '}
+      <a href="https://github.com/adrielerodr">
+        <span>Adriele Rodrigues</span>
       </a>
-      <p>
-        Orgulhosamente criado pela
-        {' '}
-        <a href="https://github.com/adrielerodr">
-          <span>Adriele Rodrigues</span>
-        </a>
-        {' '}
-        durante
-        {' '}
-        o
-        {' '}
-        <a href="https://www.alura.com.br/">
-          <span>Bootcamp Alura JAM Stack.</span>
-        </a>
-      </p>
-    </FooterWrapper>
-  );
-}
+      {' '}
+      durante
+      {' '}
+      o
+      {' '}
+      <a href="https://www.alura.com.br/">
+        <span>Bootcamp Alura JAM Stack.</span>
+      </a>
+    </p>
+  </FooterWrapper>
+);
 
-export { Footer };
+export default Footer;

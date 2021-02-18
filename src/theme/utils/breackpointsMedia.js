@@ -1,5 +1,7 @@
 import { css } from 'styled-components';
-import { breakpoints } from '../index';
+import theme from '..';
+
+const { breakpoints } = theme;
 
 const breakpointsMedia = (cssByBreakpoint) => {
   const breakpointNames = Object.keys(breakpoints);
@@ -10,6 +12,6 @@ const breakpointsMedia = (cssByBreakpoint) => {
       ${cssByBreakpoint[breakpointName]}
     }
   `);
-}
+};
 
-export { breakpointsMedia };
+export default breakpointsMedia;

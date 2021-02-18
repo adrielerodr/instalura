@@ -1,47 +1,48 @@
-import { MenuWrapper } from './styles/MenuWrapper';
-import { Button } from '../Button';
-import { Logo } from '../../../theme/Logo';
-import { Text } from '../../foundation/Text';
+import React from 'react';
+import MenuWrapper from './styles/MenuWrapper';
+import Button from '../Button';
+import Logo from '../../../theme/Logo';
+import Text from '../../foundation/Text';
 
-export const Menu = () => {
+const Menu = () => {
   const buttonsList = [
     {
       name: 'Home',
-      url: '/'
+      url: '/',
     },
     {
       name: 'FAQ',
-      url: '/faq'
+      url: '/faq',
     },
     {
       name: 'About',
-      url: '/about'
+      url: '/about',
     },
-  ]
+  ];
   return (
     <MenuWrapper>
       <MenuWrapper.LeftSide>
         <Logo />
       </MenuWrapper.LeftSide>
-      <MenuWrapper.Central>
-        {
-          buttonsList.map(link => (
-            <li key={link.url}>
-              <Text tag="a" variant="smallestException" href={link.url}>
-                {link.name}
-              </Text>
-            </li>
-          ))
-        }
-      </MenuWrapper.Central>
+      <MenuWrapper.CentralSide>
+        {buttonsList.map((link) => (
+          <li key={link.url}>
+            <Text variant="smallestException" tag="a" href={link.url}>
+              {link.name}
+            </Text>
+          </li>
+        ))}
+      </MenuWrapper.CentralSide>
       <MenuWrapper.RightSide>
-        <Button type="button" variant="secondary" ghost>
+        <Button variant="secondary" ghost>
           Login
         </Button>
-        <Button type="button" variant="primary">
+        <Button variant="primary">
           Sign up
         </Button>
       </MenuWrapper.RightSide>
     </MenuWrapper>
-  )
-}
+  );
+};
+
+export default Menu;

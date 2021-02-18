@@ -1,8 +1,8 @@
-import styled, { css } from 'styled-components'
-import { TextStyleVariants } from '../../../foundation/Text';
-import { breakpointsMedia } from '../../../../theme/utils/breackpointsMedia';
+import styled, { css } from 'styled-components';
+import { TextStyleVariantsMap } from '../../../foundation/Text';
+import breakpointsMedia from '../../../../theme/utils/breackpointsMedia';
 
-export const MenuWrapper = styled.nav`
+const MenuWrapper = styled.nav`
   font-family: 'Rubik', sans-serif;
   display: flex;
   align-items: center;
@@ -36,9 +36,9 @@ MenuWrapper.LeftSide = styled.div`
   order: 1;
   ${breakpointsMedia({
     md: css`
-        width: 131px;
-        height: 32px;
-      `,
+      width: 131px;
+      height: 32px;
+    `,
   })}
   ${breakpointsMedia({
     md: css`
@@ -49,7 +49,7 @@ MenuWrapper.LeftSide = styled.div`
 `;
 
 MenuWrapper.Central = styled.div`
-padding: 0;
+  padding: 0;
   margin: 0;
   order: 3;
   width: 100%;
@@ -82,10 +82,10 @@ padding: 0;
     transition: 200ms ease-in-out;
     ${breakpointsMedia({
     xs: css`
-        ${TextStyleVariants.smallestException}
+      ${TextStyleVariantsMap.smallestException}
     `,
     md: css`
-      ${TextStyleVariants.paragraph1}
+      ${TextStyleVariantsMap.paragraph1}
     `,
   })}
     &:hover,
@@ -110,3 +110,5 @@ MenuWrapper.RightSide = styled.div`
     `,
   })}
 `;
+
+export default MenuWrapper;

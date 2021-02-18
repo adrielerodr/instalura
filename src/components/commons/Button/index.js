@@ -1,41 +1,58 @@
 import styled, { css } from 'styled-components';
-import { TextStyleVariants } from '../../foundation/Text';
-import { propToStyle } from '../../../theme/utils/propToStyle';
-import { breakpointsMedia } from '../../../theme/utils/breackpointsMedia';
+import get from 'lodash/get';
+import { TextStyleVariantsMap } from '../../foundation/Text';
+import propToStyle from '../../../theme/utils/propToStyle';
+import breakpointsMedia from '../../../theme/utils/breackpointsMedia';
 
 const ButtonGhost = css`
-  color: ${({ theme, variant }) => `${theme.colors[variant].main.color}`};
   background-color: transparent;
+  color: ${(props) => get(props.theme, `colors.${props.variant}.main.color`)};
 `;
 
 const ButtonDefault = css`
-  color: ${({ theme, variant }) => `${theme.colors[variant].main.contrastText}`};
-  background-color: ${({ theme, variant }) => `${theme.colors[variant].main.color}`};
+  background-color: ${function (props) {
+    return get(props.theme, `colors.${props.variant}.main.color`);
+  }};
+  color: ${function (props) {
+    return get(props.theme, `colors.${props.variant}.main.contrastText`);
+  }};
 `;
 
-export const Button = styled.button`
-  ${TextStyleVariants.smallestException}
+const Button = styled.button`
+  border-radius: 8px;
+
+  ${TextStyleVariantsMap.smallestException}
+
+  ${function (props) {
+    if (props.ghost) {
+      return ButtonGhost;
+    }
+    return ButtonDefault;
+  }}
+
   ${breakpointsMedia({
     xs: css`
-      ${TextStyleVariants.smallestException}
+      ${TextStyleVariantsMap.smallestException}
     `,
     md: css`
-      padding: 12px 43px;
-      ${TextStyleVariants.paragraph1}
+     ${TextStyleVariantsMap.paragraph1}
     `,
   })}
+
   ${propToStyle('margin')}
   ${propToStyle('display')}
+
   border: 0;
   cursor: pointer;
   padding: 12px 26px;
   font-weight: bold;
   opacity: 1;
   transition: opacity ${({ theme }) => theme.transition};
-  border-radius: ${({ theme }) => theme.borderRadius};
-  ${({ ghost }) => (ghost ? ButtonGhost : ButtonDefault)}
+  border-radius: ${(props) => props.theme.borderRadius};
   &:hover,
   &:focus {
     opacity: .5;
   }
 `;
+
+export default Button;
