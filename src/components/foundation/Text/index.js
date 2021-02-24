@@ -7,9 +7,9 @@ import propToStyle from '../../../theme/utils/propToStyle';
 import breakpointsMedia from '../../../theme/utils/breackpointsMedia';
 
 const textStyle = ({ theme, variant }) => css`
-  font-size: ${theme.TextStyleVariantsMap[variant].fontSize};
-  font-weight: ${theme.TextStyleVariantsMap[variant].fontWeight};
-  line-height: ${theme.TextStyleVariantsMap[variant].lineHeight};
+  font-size: ${theme.typographyVariants[variant].fontSize};
+  font-weight: ${theme.typographyVariants[variant].fontWeight};
+  line-height: ${theme.typographyVariants[variant].lineHeight};
 `;
 
 export const TextStyleVariantsMap = {
