@@ -19,13 +19,13 @@ export const TextStyleVariantsMap = {
     ${({ theme }) => textStyle({ theme, variant: 'titleXS' })}
     ${breakpointsMedia({
     md: ({ theme }) => textStyle({ theme, variant: 'title' }),
-  })}
-  `,
+  })
+}`,
 };
 
 const TextBase = styled.span`
   ${(props) => TextStyleVariantsMap[props.variant]}
-  color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
+  color: ${(props) => get(props.theme, `colors.${props.color}.color`)};
   ${propToStyle('textAlign')}
   ${propToStyle('marginBottom')}
   ${propToStyle('margin')}
@@ -51,10 +51,11 @@ export function Text({
 Text.defaultProps = {
   tag: 'span',
   variant: 'paragraph1',
+  children: null,
 };
 
 Text.propTypes = {
   tag: PropTypes.string,
   variant: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };

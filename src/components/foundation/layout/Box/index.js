@@ -4,9 +4,11 @@ import propToStyle from '../../../../theme/utils/propToStyle';
 const Box = styled.div`
   ${propToStyle('flex')}
   ${propToStyle('display')}
+  ${propToStyle('padding')}
+  ${propToStyle('boxShadow')}
+  ${propToStyle('flexWrap')}
   ${propToStyle('flexDirection')}
   ${propToStyle('justifyContent')}
-  ${propToStyle('flexWrap')}
   ${propToStyle('backgroundColor')}
   ${propToStyle('backgroundImage')}
   ${propToStyle('backgroundRepeat')}
