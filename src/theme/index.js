@@ -36,6 +36,14 @@ const colors = {
       contrastText: '#fff',
     },
   },
+  error: {
+    color: '#941313',
+    contrastText: '#fff',
+  },
+  success: {
+    color: '#E32B2B',
+    contrastText: '#fff',
+  },
   modes: {
     dark: {},
   },

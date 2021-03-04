@@ -41,12 +41,12 @@ function Modal({ isOpen, onClose, children }) {
   return (
     <ModalWrapper
       isOpen={isOpen}
-      onClick={(event) => {
-        const isSafeArea = event.target.closest('[data-modal-safe-area="true"]');
-        if (!isSafeArea) {
-          onClose();
-        }
-      }}
+      // onClick={(event) => {
+      //   const isSafeArea = event.target.closest('[data-modal-safe-area="true"]');
+      //   if (!isSafeArea) {
+      //     onClose();
+      //   }
+      // }}
     >
       {isOpen && <LockScroll />}
       <motion.div
