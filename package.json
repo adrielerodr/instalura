@@ -6,7 +6,8 @@
     "build": "next build",
     "export": "next build && next export",
     "start": "next start",
-    "lint": "yarn eslint src pages --fix"
+    "lint": "yarn eslint src pages --fix",
+    "commit": "cz"
   },
   "dependencies": {
     "@crello/react-lottie": "^0.0.11",
@@ -22,12 +23,25 @@
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.8.0",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.18.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^5.1.3"
   },
-  "license": "MIT"
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
