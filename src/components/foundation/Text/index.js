@@ -35,8 +35,22 @@ export function Text({
   variant,
   children,
   tag,
+  href,
   ...props
 }) {
+  if (href) {
+    return (
+      <TextBase
+        as={tag}
+        variant={variant}
+        href={href}
+        {...props}
+      >
+        {children}
+      </TextBase>
+    );
+  }
+
   return (
     <TextBase
       as={tag}
@@ -50,11 +64,13 @@ export function Text({
 
 Text.defaultProps = {
   tag: 'span',
-  variant: 'paragraph1',
   children: null,
+  variant: 'paragraph1',
+  href: PropTypes.string,
 };
 
 Text.propTypes = {
+  href: '',
   tag: PropTypes.string,
   variant: PropTypes.string,
   children: PropTypes.node,

@@ -9,7 +9,7 @@ import Modal from '../src/components/commons/Modal';
 import RegisterForm from '../src/components/patterns/RegisterForm';
 
 export default function Home() {
-  const [isModalOpen, setModalState] = React.useState(true);
+  const [isModalOpen, setModalState] = React.useState(false);
 
   return (
     <Box
@@ -32,7 +32,7 @@ export default function Home() {
           <RegisterForm modalProps={propsDoModal} />
         )}
       </Modal>
-      <Menu />
+      <Menu onCadastrarClick={() => setModalState(true)} />
       <Grid.Container
         marginTop={{
           xs: '32px',
