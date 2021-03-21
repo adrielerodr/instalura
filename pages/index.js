@@ -7,6 +7,7 @@ import Grid from '../src/components/foundation/layout/Grid';
 import Box from '../src/components/foundation/layout/Box';
 import Modal from '../src/components/commons/Modal';
 import RegisterForm from '../src/components/patterns/RegisterForm';
+import SEO from '../src/components/commons/SEO';
 
 export default function Home() {
   const [isModalOpen, setModalState] = React.useState(false);
@@ -22,6 +23,7 @@ export default function Home() {
       backgroundRepeat="no-repeat"
       backgroundPosition="bottom right"
     >
+      <SEO headTitle="Home" />
       <Modal
         isOpen={isModalOpen}
         onClose={() => {

@@ -7,7 +7,7 @@
     "export": "next build && next export",
     "start": "next start",
     "lint": "yarn eslint src pages --fix",
-    "commit": "cz"
+    "commit": "git add . && cz"
   },
   "dependencies": {
     "@crello/react-lottie": "^0.0.11",
