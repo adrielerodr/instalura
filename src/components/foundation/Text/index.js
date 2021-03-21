@@ -66,11 +66,11 @@ Text.defaultProps = {
   tag: 'span',
   children: null,
   variant: 'paragraph1',
-  href: PropTypes.string,
+  href: '/',
 };
 
 Text.propTypes = {
-  href: '',
+  href: PropTypes.string,
   tag: PropTypes.string,
   variant: PropTypes.string,
   children: PropTypes.node,
