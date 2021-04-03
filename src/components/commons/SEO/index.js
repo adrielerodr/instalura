@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 
-function SEO({ headTitle }) {
+export default function SEO({ headTitle }) {
   const pageTitleDefault = 'Instalura - Projeto do Alura JAMStack Bootcamp';
   const pageUrl = 'https://metatags.io/';
   const pageImage = 'https://www.alura.com.br/assets/img/alura-share.1571848411.png';
@@ -35,8 +35,6 @@ function SEO({ headTitle }) {
     </Head>
   );
 }
-
-export default SEO;
 
 SEO.defaultProps = {
   headTitle: '',
