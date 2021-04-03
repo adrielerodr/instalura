@@ -1,10 +1,10 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import styled, { css } from 'styled-components';
-import get from 'lodash/get';
 import PropTypes from 'prop-types';
+import get from 'lodash/get';
+import styled, { css } from 'styled-components';
 import propToStyle from '../../../theme/utils/propToStyle';
 import breakpointsMedia from '../../../theme/utils/breackpointsMedia';
+import Link from '../../commons/Link';
 
 const textStyle = ({ theme, variant }) => css`
   font-size: ${theme.typographyVariants[variant].fontSize};
@@ -32,18 +32,19 @@ const TextBase = styled.span`
 `;
 
 export function Text({
+  tag,
   variant,
   children,
-  tag,
   href,
   ...props
 }) {
   if (href) {
     return (
       <TextBase
-        as={tag}
-        variant={variant}
+        as={Link}
         href={href}
+        variant={variant}
+        // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
       >
         {children}
@@ -55,6 +56,7 @@ export function Text({
     <TextBase
       as={tag}
       variant={variant}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     >
       {children}
@@ -62,16 +64,16 @@ export function Text({
   );
 }
 
-Text.defaultProps = {
-  tag: 'span',
-  children: null,
-  variant: 'paragraph1',
-  href: '/',
-};
-
 Text.propTypes = {
-  href: PropTypes.string,
   tag: PropTypes.string,
+  href: PropTypes.string,
   variant: PropTypes.string,
   children: PropTypes.node,
+};
+
+Text.defaultProps = {
+  tag: 'span',
+  variant: 'paragraph1',
+  children: null,
+  href: '',
 };
