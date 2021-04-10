@@ -83,7 +83,7 @@ export default function Button({ href, children, ...props }) {
 }
 
 Button.defaultProps = {
-  href: '/',
+  href: '',
 };
 
 Button.propTypes = {
