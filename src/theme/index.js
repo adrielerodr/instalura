@@ -36,13 +36,18 @@ const colors = {
       contrastText: '#fff',
     },
   },
+  // Feedback colors
   error: {
-    color: '#941313',
-    contrastText: '#fff',
+    main: {
+      color: '#dc3545',
+      contrastText: '#fff',
+    },
   },
   success: {
-    color: '#E32B2B',
-    contrastText: '#fff',
+    main: {
+      color: '#28a745',
+      contrastText: '#fff',
+    },
   },
   modes: {
     dark: {},
