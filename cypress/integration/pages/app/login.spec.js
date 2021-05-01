@@ -4,13 +4,13 @@ describe('/pages/app/login/', () => {
   describe('when fill and submit a form login request', () => {
     it('go to the profile page', () => {
       // Pré Teste
-      cy.intercept('https://instalura-api-git-master.omariosouto.vercel.app')
+      cy.intercept('https://instalura-api-git-master-omariosouto.vercel.app/api/login')
         .as('userLogin');
 
       // Cenário
       const loginScreen = new LoginScreenPageObject(cy);
       loginScreen
-        .fillLoginForm({ user: 'omariosouto', password: 'senhasegura' })
+        .fillLoginForm({ username: 'omariosouto', password: 'senhasegura' })
         .submitLoginForm();
 
       // Asserções

@@ -5,15 +5,15 @@ export default class LoginScreenPageObject {
     this.cy.visit('/app/login');
   }
 
-  fillLoginForm({ user, password }) {
-    this.cy.get('#formCadastro input[name="user"]').type(user);
-    this.cy.get('#formCadastro input[name="password"]').type(password);
+  fillLoginForm({ username, password }) {
+    this.cy.get('#formRegister input[name="user"]').type(username);
+    this.cy.get('#formRegister input[name="password"]').type(password);
 
     return this;
   }
 
   submitLoginForm() {
-    this.cy.get('#formCadastro button[type="submit"]').click();
+    this.cy.get('#formRegister button[type="submit"]').click();
 
     return this;
   }
