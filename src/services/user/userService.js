@@ -3,7 +3,7 @@ import HttpClient from '../../infra/http/HttpCliente';
 import authService from '../auth/authService';
 
 const BASE_URL = isStagingEnv
-  ? 'https://instalura-api-git-master.omariosouto.vercel.app'
+  ? 'https://instalura-api-git-master-omariosouto.vercel.app'
   : 'https://instalura-api.omariosouto.vercel.app';
 
 const userService = {
