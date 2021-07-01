@@ -42,7 +42,7 @@
     "@testing-library/user-event": "^12.6.3",
     "@types/jest": "^26.0.22",
     "babel-plugin-styled-components": "^1.8.0",
-    "cypress": "^7.0.1",
+    "cypress": "^7.6.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.18.0",
     "eslint-config-airbnb": "^18.2.1",
